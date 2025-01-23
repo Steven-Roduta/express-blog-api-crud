@@ -3,27 +3,17 @@ const router = express.Router();
 
 const postControl = require('../controller/postController')
 
-app.get('/', postControl.index);
-
-//rotte
-
 // index
-router.get('/', (req, res )=>  {
-    res.send('lista dei miei post')
-});
+router.get('/', postControl.index);
 
 // show
-router.get('/', (req, res )=>  {});
+router.get('/:id',postControl.show);
 // store
-router.get('/', (req, res )=>  {});
+router.get('/', (req, res) => {});
 
 // update
-router.get('/', (req, res )=>  {});
+router.get('/',(req, res) => {});
 // destroy
-router.get('/', (req, res )=>  {});
+router.delete('/',postControl.destroy);
 
-app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
-})
-        
 module.exports = router
