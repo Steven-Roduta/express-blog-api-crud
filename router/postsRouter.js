@@ -5,7 +5,7 @@ const validation = require('../middlewares/validation')
 const postControl = require('../controller/postController')
 
 // index
-router.get('/', validation, postControl.index);
+router.get('/', postControl.index);
 
 // show
 router.get('/:id',validation, postControl.show);
